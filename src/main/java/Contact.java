@@ -5,12 +5,14 @@ public class Contact {
   private String mFirstName;
   private String mLastName;
   private String mBirthMonth;
+  private int mId;
 
   public Contact(String firstName, String lastName, String birthMonth) {
     mFirstName = firstName;
     mLastName = lastName;
     mBirthMonth = birthMonth;
     instances.add(this);
+    mId = instances.size();
   }
 
   public String getFirstName() {
@@ -27,5 +29,9 @@ public class Contact {
 
   public static ArrayList<Contact> all() {
     return instances;
+  }
+
+  public int getId() {
+    return mId;
   }
 }

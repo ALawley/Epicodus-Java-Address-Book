@@ -37,4 +37,10 @@ public class ContactTest {
     assertTrue(Contact.all().contains(testContact));
     assertTrue(Contact.all().contains(testContact2));
   }
+
+  @Test
+  public void getId_returnsIdOfContact_id() {
+    Contact testContact = new Contact("test", "test2", "August");
+    assertEquals(Contact.all().size(), testContact.getId());
+  }
 }
