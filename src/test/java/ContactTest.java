@@ -25,8 +25,16 @@ public class ContactTest {
   }
 
   @Test
-  public void getBirthMonth_returnsBirthMonth_test() {
+  public void getBirthMonth_returnsBirthMonth_August() {
     Contact testContact = new Contact("test", "test2", "August");
     assertEquals("August", testContact.getBirthMonth());
+  }
+
+  @Test
+  public void all_returnsAllContacts() {
+    Contact testContact = new Contact("test", "test2", "August");
+    Contact testContact2 = new Contact("test2", "test3", "October");
+    assertTrue(Contact.all().contains(testContact));
+    assertTrue(Contact.all().contains(testContact2));
   }
 }
