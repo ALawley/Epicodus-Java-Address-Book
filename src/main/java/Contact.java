@@ -36,7 +36,11 @@ public class Contact {
   }
 
   public static Contact find(int id) {
-    return instances.get(id - 1);
+    try {
+      return instances.get(id - 1);
+    } catch (IndexOutOfBoundsException e) {
+      return null;
+    }
   }
 
   public static void clear() {

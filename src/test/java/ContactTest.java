@@ -52,6 +52,13 @@ public class ContactTest {
   }
 
   @Test
+  public void find_throwsExceptionWhenIDIsOutOfBounds() {
+    Contact testContact = new Contact("test", "test2", "August");
+    Contact testContact2 = new Contact("test2", "test3", "October");
+    assertTrue(Contact.find(999) == null);
+  }
+
+  @Test
   public void clear_clearsMemoryOfContact(){
     Contact testContact = new Contact("test", "test2", "August");
     Contact testContact2 = new Contact("test2", "test3", "October");
