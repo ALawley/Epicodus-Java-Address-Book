@@ -28,11 +28,18 @@ public class PhoneTest {
     Phone testPhone = new Phone("cell", "503", "555-5555");
     assertEquals("555-5555", testPhone.getPhoneNumber());
   }
+
   @Test
   public void all_returnsAllPhoneEntries() {
     Phone testPhone = new Phone("cell", "503", "555-5555");
     Phone testPhone2 = new Phone("home", "555", "555-5555");
     assertTrue(Phone.all().contains(testPhone));
     assertTrue(Phone.all().contains(testPhone2));
+  }
+
+  @Test
+  public void getId_returnsId_Id() {
+    Phone testPhone = new Phone("cell", "503", "555-5555");
+    assertEquals(Phone.all().size(), testPhone.getId());
   }
 }
