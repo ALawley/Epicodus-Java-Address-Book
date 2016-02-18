@@ -43,4 +43,11 @@ public class ContactTest {
     Contact testContact = new Contact("test", "test2", "August");
     assertEquals(Contact.all().size(), testContact.getId());
   }
+
+  @Test
+  public void find_returnsContactByItsID_testContact() {
+    Contact testContact = new Contact("test", "test2", "August");
+    Contact testContact2 = new Contact("test2", "test3", "October");
+    assertEquals(testContact2, Contact.find(testContact2.getId()));
+  }
 }

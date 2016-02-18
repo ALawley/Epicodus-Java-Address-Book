@@ -34,4 +34,8 @@ public class Contact {
   public int getId() {
     return mId;
   }
+
+  public static Contact find(int id) {
+    return instances.get(id - 1);
+  }
 }
