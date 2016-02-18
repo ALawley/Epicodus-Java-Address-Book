@@ -1,13 +1,19 @@
 import java.util.ArrayList;
 
 public class Contact {
-  private String mName;
+  private String mFirstName;
+  private String mLastName;
 
-  public Contact(String name) {
-    mName = name;
+  public Contact(String firstName, String lastName) {
+    mFirstName = firstName;
+    mLastName = lastName;
   }
 
-  public String getName() {
-    return mName;
+  public String getFirstName() {
+    return mFirstName;
+  }
+
+  public String getLastName() {
+    return mLastName;
   }
 }

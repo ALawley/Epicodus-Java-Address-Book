@@ -8,13 +8,19 @@ public class ContactTest {
 
   @Test
   public void contact_instantiatesCorrectly() {
-    Contact testContact = new Contact("test");
+    Contact testContact = new Contact("test", "test2");
     assertEquals(true, testContact instanceof Contact);
   }
 
   @Test
-  public void getName_returnsName_test() {
-    Contact testContact = new Contact("test");
-    assertEquals("test", testContact.getName());
+  public void getFirstName_returnsFirstName_test() {
+    Contact testContact = new Contact("test", "test2");
+    assertEquals("test", testContact.getFirstName());
+  }
+
+  @Test
+  public void getLastName_returnsLastName_test() {
+    Contact testContact = new Contact("test", "test2");
+    assertEquals("test2", testContact.getLastName());
   }
 }
