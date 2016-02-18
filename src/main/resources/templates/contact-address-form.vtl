@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <h1>Your Address Book</h1>
+  <h3>Add an address</h3>
+</div>
+
+<p>Add an address here:</p>
+
+<form action="/address-new" method="post">
+  <input id="contactId" name="contactId" type="hidden" value="$contact.getId()">
+  <label for="addressType">Address Type (Work, Home, Etc)</label>
+  <input id="addressType" name="addressType" type="text">
+
+  <label for="street">Street Address</label>
+  <input id="street" name="street" type="text">
+
+  <label for="city">City</label>
+  <input id="city" name="city" type="text">
+
+  <label for="state">State</label>
+  <input id="state" name="state" type="text">
+
+  <label for="zip">Zip Code</label>
+  <input id="zip" name="zip" type="number">
+
+  <button type="submit" class="btn btn-success">Add Address</button>
+</form>

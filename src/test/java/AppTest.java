@@ -85,4 +85,37 @@ public class AppTest extends FluentTest {
     submit(".btn");
     assertThat(pageSource()).contains("Work");
   }
+
+  @Test
+  public void emailAddTest() {
+    goTo("http://localhost:4567/contacts/new");
+    fill("#firstName").with("Bob");
+    fill("#lastName").with("Smith");
+    fill("#birthMonth").with("September");
+    submit(".btn");
+    click("a", withText("Bob Smith"));
+    click("a", withText("Add a new Email"));
+    fill("#emailType").with("Work");
+    fill("#emailAddress").with("test@gmail.com");
+    submit(".btn");
+    assertThat(pageSource()).contains("test@gmail.com");
+  }
+
+  @Test
+  public void addressAddTest() {
+    goTo("http://localhost:4567/contacts/new");
+    fill("#firstName").with("Bob");
+    fill("#lastName").with("Smith");
+    fill("#birthMonth").with("September");
+    submit(".btn");
+    click("a", withText("Bob Smith"));
+    click("a", withText("Add a new Email"));
+    fill("#addressType").with("Work");
+    fill("#street").with("123 E Burnside");
+    fill("#city").with("Portland");
+    fill("#state").with("OR");
+    fill("#zip").with("97214");
+    submit(".btn");
+    assertThat(pageSource()).contains("123 E Burnside");
+  }
 }

@@ -36,6 +36,15 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/contacts", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+
+      model.put("contacts", Contact.all());
+
+      model.put("template", "templates/contacts.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
     get("/contacts/:id", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
 
@@ -89,6 +98,33 @@ public class App {
       Contact contact = Contact.find(Integer.parseInt(request.queryParams("contactId")));
       Email newEmail = new Email(type, emailAddress);
       Contact.find(contact.getId()).addEmail(newEmail);
+      model.put("contact", contact);
+
+      model.put("template", "templates/contact.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/contacts/:id/addresses/new", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+
+      Contact contact = Contact.find(Integer.parseInt(request.params(":id")));
+      model.put("contact", contact);
+
+      model.put("template", "templates/contact-address-form.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/address-new", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+
+      String type = request.queryParams("addressType");
+      String street = request.queryParams("street");
+      String city = request.queryParams("city");
+      String state = request.queryParams("state");
+      int zip = Integer.parseInt(request.queryParams("zip"));
+      Contact contact = Contact.find(Integer.parseInt(request.queryParams("contactId")));
+      Address newAddress = new Address(type, street, city, state, zip);
+      Contact.find(contact.getId()).addAddress(newAddress);
       model.put("contact", contact);
 
       model.put("template", "templates/contact.vtl");
