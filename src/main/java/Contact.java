@@ -52,4 +52,8 @@ public class Contact {
   public ArrayList<Phone> getPhones() {
     return mPhones;
   }
+
+  public void addPhone(Phone phone) {
+    mPhones.add(phone);
+  }
 }

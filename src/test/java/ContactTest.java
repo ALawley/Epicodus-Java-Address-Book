@@ -72,4 +72,12 @@ public class ContactTest {
     Contact testContact = new Contact("test2", "test3", "October");
     assertTrue(testContact.getPhones() instanceof ArrayList);
   }
+
+  @Test
+  public void addPhone_addsPhoneObjectToPhoneArrayList() {
+    Contact testContact = new Contact("test2", "test3", "October");
+    Phone testPhone = new Phone("cell", "505", "555-5555");
+    testContact.addPhone(testPhone);
+    assertTrue(testContact.getPhones().contains(testPhone));
+  }
 }
