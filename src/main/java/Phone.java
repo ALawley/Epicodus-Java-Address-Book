@@ -34,4 +34,8 @@ public class Phone {
   public int getId() {
     return mId;
   }
+
+  public static Phone find(int id) {
+    return instances.get(id - 1);
+  }
 }

@@ -42,4 +42,10 @@ public class PhoneTest {
     Phone testPhone = new Phone("cell", "503", "555-5555");
     assertEquals(Phone.all().size(), testPhone.getId());
   }
+
+  @Test
+  public void find_returnsPhoneObjectWithId_testPhone() {
+    Phone testPhone = new Phone("cell", "503", "555-5555");
+    assertEquals(testPhone, Phone.find(testPhone.getId()));
+  }
 }
