@@ -1,0 +1,17 @@
+<div class="jumbotron">
+  <h1>Your Address Book</h1>
+  <h3>Add an email</h3>
+</div>
+
+<p>Add an email here:</p>
+
+<form action="/email-new" method="post">
+  <input id="contactId" name="contactId" type="hidden" value="$contact.getId()">
+  <label for="emailType">Email Type (Work, Personal, Etc)</label>
+  <input id="emailType" name="emailType" type="text">
+
+  <label for="emailAddress">Email Address</label>
+  <input id="emailAddress" name="emailAddress" type="text">
+
+  <button type="submit" class="btn btn-success">Add Email</button>
+</form>

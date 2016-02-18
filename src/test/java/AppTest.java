@@ -5,9 +5,6 @@ import java.util.ArrayList;
 import org.openqa.selenium.WebDriver;
 import static org.fluentlenium.core.filter.FilterConstructor.*;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
-import java.util.concurrent.TimeUnit;
-import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTest extends FluentTest {

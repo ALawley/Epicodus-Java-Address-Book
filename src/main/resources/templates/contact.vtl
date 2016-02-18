@@ -19,7 +19,7 @@
     <div class="well">
       #foreach($email in $contact.getEmails())
       <h3>Type: $email.getType()</h3>
-      <h3>Email Address: $email.getAddress()</h3>
+      <h3>Email Address: $email.getEmailAddress()</h3>
       #end
     </div>
     <a class="btn btn-warning" href="/contacts/$contact.getId()/emails/new">Add a new Email</a>
