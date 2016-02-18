@@ -29,6 +29,10 @@ public class Contact {
     return mLastName;
   }
 
+  public String getFullName() {
+    return mFirstName + " " + mLastName;
+  }
+
   public String getBirthMonth() {
     return mBirthMonth;
   }

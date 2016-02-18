@@ -1,0 +1,42 @@
+<div class="jumbotron">
+  <h1>Your Address Book</h1>
+  <h3>$contact.getFullName()</h3>
+  <h3>Birth Month: $contact.getBirthMonth()</h3>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <h2>Phone:</h2>
+    <div class="well">
+      #foreach($phone in $contact.getPhones())
+      <h3>Type: $phone.getType()</h3>
+      <h3>Number: $phone.getAreaCode() $phone.getPhoneNumber()</h3>
+      #end
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h2>Email:</h2>
+    <div class="well">
+      #foreach($email in $contact.getEmails())
+      <h3>Type: $email.getType()</h3>
+      <h3>Email Address: $email.getAddress()</h3>
+      #end
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h2>Address:</h2>
+    <div class="well">
+      #foreach($address in $contact.getAddresses())
+      <h4>Type: $address.getType()</h4>
+      <h3>Street: $address.getStreet()</h3>
+      <h3>City: $address.getCity()</h3>
+      <h3>State: $address.getState()</h3>
+      <h3>Zip Code: $address.getZip()</h3>
+      #end
+    </div>
+  </div>
+</div>
+<a class="btn btn-primary" href="/categories/$contact.getId()/phones/new">Add a new Phone</a>
+<a class="btn btn-warning" href="/categories/$contact.getId()/emails/new">Add a new Email</a>
+<a class="btn btn-success" href="/categories/$contact.getId()/addresses/new">Add a new Address</a>
+<br>
+<a class="btn btn-info" href="/contacts">View all contacts</a>

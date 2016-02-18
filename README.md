@@ -1,8 +1,8 @@
-# _TITLE_
+# _Address Book_
 
-#### _Epicodus Java Exercise, Date_
+#### _Epicodus Java Exercise, 02/18/2016_
 
-#### By _**Anna Lawley and **_
+#### By _**Anna Lawley and Alissa Paluska**_
 
 ## Description
 
@@ -36,4 +36,4 @@ _To contact, leave a comment on Github._
 
 *MIT License*
 
-Copyright (c) 2016 **_Anna Lawley and_**
+Copyright (c) 2016 **_Anna Lawley & Alissa Paluska_**

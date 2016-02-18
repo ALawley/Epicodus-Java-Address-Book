@@ -26,6 +26,12 @@ public class ContactTest {
   }
 
   @Test
+  public void getFullName_returnsFullName_test() {
+    Contact testContact = new Contact("test", "test2", "August");
+    assertEquals("test test2", testContact.getFullName());
+  }
+
+  @Test
   public void getBirthMonth_returnsBirthMonth_August() {
     Contact testContact = new Contact("test", "test2", "August");
     assertEquals("August", testContact.getBirthMonth());

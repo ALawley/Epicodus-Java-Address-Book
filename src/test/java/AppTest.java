@@ -57,4 +57,16 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Bob Smith");
     assertThat(pageSource()).contains("Alice Jones");
   }
+
+  @Test
+  public void contactPageDisplayTest() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Add New Contact"));
+    fill("#firstName").with("Bob");
+    fill("#lastName").with("Smith");
+    fill("#birthMonth").with("September");
+    submit(".btn");
+    click("a", withText("Bob Smith"));
+    assertThat(pageSource()).contains("September");
+  }
 }
