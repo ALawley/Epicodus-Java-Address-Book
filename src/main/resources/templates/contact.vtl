@@ -5,37 +5,37 @@
 </div>
 <div class="row">
   <div class="col-md-4">
-    <h2>Phone:</h2>
-    <div class="well">
-      #foreach($phone in $contact.getPhones())
-      <h3>Type: $phone.getType()</h3>
-      <h3>Number: $phone.getAreaCode() $phone.getPhoneNumber()</h3>
-      #end
-    </div>
     <a class="btn btn-primary" href="/contacts/$contact.getId()/phones/new">Add a new Phone</a>
+    <h2>Phone:</h2>
+    #foreach($phone in $contact.getPhones())
+    <div class="well">
+      <h3>Type:</h3><h4>$phone.getType()</h4>
+      <h3>Number:</h3><h4>$phone.getAreaCode() $phone.getPhoneNumber()</h4>
+    </div>
+    #end
   </div>
   <div class="col-md-4">
+  <a class="btn btn-warning" href="/contacts/$contact.getId()/emails/new">Add a new Email</a>
     <h2>Email:</h2>
+    #foreach($email in $contact.getEmails())
     <div class="well">
-      #foreach($email in $contact.getEmails())
-      <h3>Type: $email.getType()</h3>
-      <h3>Email Address: $email.getEmailAddress()</h3>
-      #end
+      <h3>Type:</h3> <h4>$email.getType()</h4>
+      <h3>Email Address:</h3> <h4>$email.getEmailAddress()</h4>
     </div>
-    <a class="btn btn-warning" href="/contacts/$contact.getId()/emails/new">Add a new Email</a>
+    #end
   </div>
   <div class="col-md-4">
+  <a class="btn btn-success" href="/contacts/$contact.getId()/addresses/new">Add a new Address</a>
     <h2>Address:</h2>
+    #foreach($address in $contact.getAddresses())
     <div class="well">
-      #foreach($address in $contact.getAddresses())
-      <h3>Type: $address.getType()</h3>
-      <h3>Street: $address.getStreet()</h3>
-      <h3>City: $address.getCity()</h3>
-      <h3>State: $address.getState()</h3>
-      <h3>Zip Code: $address.getZip()</h3>
-      #end
+      <h3>Type:</h3><h4>$address.getType()</h4>
+      <h3>Street:</h3><h4>$address.getStreet()</h4>
+      <h3>City:</h3><h4>$address.getCity()</h4>
+      <h3>State:</h3><h4>$address.getState()</h4>
+      <h3>Zip Code:</h3><h4>$address.getZip()</h4>
     </div>
-    <a class="btn btn-success" href="/contacts/$contact.getId()/addresses/new">Add a new Address</a>
+    #end
   </div>
 </div>
 
