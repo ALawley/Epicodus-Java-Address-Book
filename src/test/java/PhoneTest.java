@@ -48,4 +48,10 @@ public class PhoneTest {
     Phone testPhone = new Phone("cell", "503", "555-5555");
     assertEquals(testPhone, Phone.find(testPhone.getId()));
   }
+
+  @Test
+  public void find_throwsExceptionWhenIdIsNotFound() {
+    Phone testPhone = new Phone("cell", "503", "555-5555");
+    assertTrue(Phone.find(999) == null);
+  }
 }
