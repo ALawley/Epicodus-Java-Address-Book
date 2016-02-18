@@ -50,4 +50,12 @@ public class ContactTest {
     Contact testContact2 = new Contact("test2", "test3", "October");
     assertEquals(testContact2, Contact.find(testContact2.getId()));
   }
+
+  @Test
+  public void clear_clearsMemoryOfContact(){
+    Contact testContact = new Contact("test", "test2", "August");
+    Contact testContact2 = new Contact("test2", "test3", "October");
+    Contact.clear();
+    assertEquals(Contact.all().size(), 0);
+  }
 }
