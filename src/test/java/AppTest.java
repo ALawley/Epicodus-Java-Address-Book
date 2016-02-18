@@ -31,7 +31,7 @@ public class AppTest extends FluentTest {
   }
 
   @Test
-  public void contactFormDisplayTest() {
+  public void contactsDisplayTest() {
     goTo("http://localhost:4567/");
     click("a", withText("Add New Contact"));
     fill("#firstName").with("Bob");
@@ -39,5 +39,22 @@ public class AppTest extends FluentTest {
     fill("#birthMonth").with("September");
     submit(".btn");
     assertThat(pageSource()).contains("Bob Smith");
+  }
+
+  @Test
+  public void contactsDisplayMultipleTest() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Add New Contact"));
+    fill("#firstName").with("Bob");
+    fill("#lastName").with("Smith");
+    fill("#birthMonth").with("September");
+    submit(".btn");
+    click("a", withText("Add New Contact"));
+    fill("#firstName").with("Alice");
+    fill("#lastName").with("Jones");
+    fill("#birthMonth").with("October");
+    submit(".btn");
+    assertThat(pageSource()).contains("Bob Smith");
+    assertThat(pageSource()).contains("Alice Jones");
   }
 }
