@@ -80,4 +80,18 @@ public class ContactTest {
     testContact.addPhone(testPhone);
     assertTrue(testContact.getPhones().contains(testPhone));
   }
+
+  @Test
+  public void getEmails_initiallyReturnsEmptyArrayList() {
+    Contact testContact = new Contact("test2", "test3", "October");
+    assertTrue(testContact.getEmails() instanceof ArrayList);
+  }
+
+  @Test
+  public void addEmail_addsEmailObjectToEmailArrayList() {
+    Contact testContact = new Contact("test2", "test3", "October");
+    Email testEmail = new Email("personal", "test@gmail.com");
+    testContact.addEmail(testEmail);
+    assertTrue(testContact.getEmails().contains(testEmail));
+  }
 }

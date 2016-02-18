@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Contact {
   private static ArrayList<Contact> instances = new ArrayList<Contact>();
   private ArrayList<Phone> mPhones;
+  private ArrayList<Email> mEmails;
   private String mFirstName;
   private String mLastName;
   private String mBirthMonth;
@@ -15,6 +16,7 @@ public class Contact {
     instances.add(this);
     mId = instances.size();
     mPhones = new ArrayList<Phone>();
+    mEmails = new ArrayList<Email>();
   }
 
   public String getFirstName() {
@@ -55,5 +57,13 @@ public class Contact {
 
   public void addPhone(Phone phone) {
     mPhones.add(phone);
+  }
+
+  public ArrayList<Email> getEmails() {
+    return mEmails;
+  }
+
+  public void addEmail(Email email) {
+    mEmails.add(email);
   }
 }
