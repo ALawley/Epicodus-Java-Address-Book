@@ -29,4 +29,15 @@ public class AppTest extends FluentTest {
     click("a", withText("Add New Contact"));
     assertThat(pageSource()).contains("Add a contact");
   }
+
+  @Test
+  public void contactFormDisplayTest() {
+    goTo("http://localhost:4567/");
+    click("a", withText("Add New Contact"));
+    fill("#firstName").with("Bob");
+    fill("#lastName").with("Smith");
+    fill("#birthMonth").with("September");
+    submit(".btn");
+    assertThat(pageSource()).contains("Bob Smith");
+  }
 }

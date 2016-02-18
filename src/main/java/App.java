@@ -23,6 +23,20 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    post("/contacts", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+
+      String firstName = request.queryParams("firstName");
+      String lastName = request.queryParams("lastName");
+      String birthMonth = request.queryParams("birthMonth");
+      Contact newContact = new Contact(firstName, lastName, birthMonth);
+      model.put("contacts", Contact.all());
+
+      model.put("template", "templates/contacts.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+
   }
 
 

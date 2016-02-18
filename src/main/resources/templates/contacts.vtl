@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h1>Your Address Book</h1>
+  <h2> Contacts </h2>
+</div>
+
+#foreach($contact in $contacts)
+ <h3><a href="/contacts/$contact.getId()">$contact.getFirstName() $contact.getLastName()</a></h3>
+#end
+
+<a class="btn btn-primary" href="/contacts/new">Add a new contact</a>
