@@ -12,6 +12,7 @@
       <h3>Number: $phone.getAreaCode() $phone.getPhoneNumber()</h3>
       #end
     </div>
+    <a class="btn btn-primary" href="/contacts/$contact.getId()/phones/new">Add a new Phone</a>
   </div>
   <div class="col-md-4">
     <h2>Email:</h2>
@@ -21,6 +22,7 @@
       <h3>Email Address: $email.getAddress()</h3>
       #end
     </div>
+    <a class="btn btn-warning" href="/contacts/$contact.getId()/emails/new">Add a new Email</a>
   </div>
   <div class="col-md-4">
     <h2>Address:</h2>
@@ -33,10 +35,11 @@
       <h3>Zip Code: $address.getZip()</h3>
       #end
     </div>
+    <a class="btn btn-success" href="/contacts/$contact.getId()/addresses/new">Add a new Address</a>
   </div>
 </div>
-<a class="btn btn-primary" href="/categories/$contact.getId()/phones/new">Add a new Phone</a>
-<a class="btn btn-warning" href="/categories/$contact.getId()/emails/new">Add a new Email</a>
-<a class="btn btn-success" href="/categories/$contact.getId()/addresses/new">Add a new Address</a>
+
+
+
 <br>
-<a class="btn btn-info" href="/contacts">View all contacts</a>
+<a class="btn btn-info form-control" href="/contacts">View all contacts</a>
