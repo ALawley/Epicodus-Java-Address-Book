@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Contact {
   private static ArrayList<Contact> instances = new ArrayList<Contact>();
+  private ArrayList<Phone> mPhones;
   private String mFirstName;
   private String mLastName;
   private String mBirthMonth;
@@ -13,6 +14,7 @@ public class Contact {
     mBirthMonth = birthMonth;
     instances.add(this);
     mId = instances.size();
+    mPhones = new ArrayList<Phone>();
   }
 
   public String getFirstName() {
@@ -45,5 +47,9 @@ public class Contact {
 
   public static void clear() {
     instances.clear();
+  }
+
+  public ArrayList<Phone> getPhones() {
+    return mPhones;
   }
 }

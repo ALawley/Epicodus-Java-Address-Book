@@ -1,5 +1,6 @@
 import org.junit.*;
 import static org.junit.Assert.*;
+import java.util.ArrayList;
 
 public class ContactTest {
 
@@ -64,5 +65,11 @@ public class ContactTest {
     Contact testContact2 = new Contact("test2", "test3", "October");
     Contact.clear();
     assertEquals(Contact.all().size(), 0);
+  }
+
+  @Test
+  public void getPhones_initiallyReturnsEmptyArrayList() {
+    Contact testContact = new Contact("test2", "test3", "October");
+    assertTrue(testContact.getPhones() instanceof ArrayList);
   }
 }
