@@ -54,4 +54,12 @@ public class PhoneTest {
     Phone testPhone = new Phone("cell", "503", "555-5555");
     assertTrue(Phone.find(999) == null);
   }
+
+  @Test
+  public void clear_removesAllPhoneObjects() {
+    Phone testPhone = new Phone("cell", "503", "555-5555");
+    Phone testPhone2 = new Phone("home", "555", "555-5555");
+    Phone.clear();
+    assertEquals(0, Phone.all().size());
+  }
 }
