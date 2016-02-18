@@ -3,10 +3,12 @@ import java.util.ArrayList;
 public class Contact {
   private String mFirstName;
   private String mLastName;
+  private String mBirthMonth;
 
-  public Contact(String firstName, String lastName) {
+  public Contact(String firstName, String lastName, String birthMonth) {
     mFirstName = firstName;
     mLastName = lastName;
+    mBirthMonth = birthMonth;
   }
 
   public String getFirstName() {
@@ -15,5 +17,9 @@ public class Contact {
 
   public String getLastName() {
     return mLastName;
+  }
+
+  public String getBirthMonth() {
+    return mBirthMonth;
   }
 }
