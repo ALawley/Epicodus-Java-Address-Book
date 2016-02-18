@@ -11,4 +11,10 @@ public class ContactTest {
     Contact testContact = new Contact("test");
     assertEquals(true, testContact instanceof Contact);
   }
+
+  @Test
+  public void getName_returnsName_test() {
+    Contact testContact = new Contact("test");
+    assertEquals("test", testContact.getName());
+  }
 }
