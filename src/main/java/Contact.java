@@ -4,6 +4,7 @@ public class Contact {
   private static ArrayList<Contact> instances = new ArrayList<Contact>();
   private ArrayList<Phone> mPhones;
   private ArrayList<Email> mEmails;
+  private ArrayList<Address> mAddresses;
   private String mFirstName;
   private String mLastName;
   private String mBirthMonth;
@@ -17,6 +18,7 @@ public class Contact {
     mId = instances.size();
     mPhones = new ArrayList<Phone>();
     mEmails = new ArrayList<Email>();
+    mAddresses = new ArrayList<Address>();
   }
 
   public String getFirstName() {
@@ -65,5 +67,13 @@ public class Contact {
 
   public void addEmail(Email email) {
     mEmails.add(email);
+  }
+
+  public ArrayList<Address> getAddresses() {
+    return mAddresses;
+  }
+
+  public void addAddress(Address address) {
+    mAddresses.add(address);
   }
 }

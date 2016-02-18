@@ -94,4 +94,18 @@ public class ContactTest {
     testContact.addEmail(testEmail);
     assertTrue(testContact.getEmails().contains(testEmail));
   }
+
+  @Test
+  public void getAddresses_initiallyReturnsEmptyArrayList() {
+    Contact testContact = new Contact("test2", "test3", "October");
+    assertTrue(testContact.getAddresses() instanceof ArrayList);
+  }
+
+  @Test
+  public void addAddress_addsAddressObjectToAddressArrayList() {
+    Contact testContact = new Contact("test2", "test3", "October");
+    Address testAddress = new Address("home", "123 E Burnside", "Portland", "OR", 97219);
+    testContact.addAddress(testAddress);
+    assertTrue(testContact.getAddresses().contains(testAddress));
+  }
 }
